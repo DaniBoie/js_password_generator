@@ -15,6 +15,7 @@ function writePassword() {
   let numberConfirm = confirm('Would you like numerical characters?')
   let specialConfirm = confirm('Would you like special characters?')
 
+  //Object of all available characters.
   let characters = {
     upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
     lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
@@ -22,8 +23,10 @@ function writePassword() {
     special: ['+', '-', '&', '!', '(', ')', '{', '}', '[', ']', '^', '~', '*', '?', ':']
   }
 
+  //Creating empty password string
   let password = ''
 
+  //Password Generation Loop
   for (let i = 0; i < passLength; i++) {
 
     let pick = Math.floor(Math.random() * 4)
@@ -63,7 +66,7 @@ function writePassword() {
         i--
       }
     }
-  
+
   }
 
   document.getElementById('password').innerHTML = `${password}`
